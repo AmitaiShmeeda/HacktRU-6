@@ -3,7 +3,7 @@ import os
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 from langchain import OpenAI, ConversationChain, LLMChain, PromptTemplate
-from langchain.chains.conversation.memory import ConversationalBufferWindowMemory
+from langchain.chains.conversation.memory import ConversationBufferWindowMemory
 
 # Initializes your app with your bot token and socket mode handler
 app = App(token=os.environ.get("SLACK_BOT_TOKEN"))
@@ -30,7 +30,7 @@ chatgpt_chain = LLMChain(
     llm=OpenAI(temperature=0),
     prompt=prompt,
     verbose=True,
-    memory=ConversationalBufferWindowMemory(k=2),
+    memory=ConversationBufferWindowMemory(k=2),
 )
 
 
