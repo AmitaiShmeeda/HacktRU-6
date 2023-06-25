@@ -1,1 +1,1 @@
-# HacktRU-6
+# HackRU-6
